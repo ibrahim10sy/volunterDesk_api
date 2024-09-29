@@ -25,7 +25,7 @@ public class UserController {
 
     @PostMapping("/addUser")
     @Operation(summary = "création de l'utilisateur")
-    public ResponseEntity<User> createMarque(
+    public ResponseEntity<User> create(
             @Valid @RequestParam("user") String userString,
             @RequestParam(value = "photoUser", required = false) MultipartFile imageFile1,
             @RequestParam(value = "photoProfil", required = false) MultipartFile imageFile)
