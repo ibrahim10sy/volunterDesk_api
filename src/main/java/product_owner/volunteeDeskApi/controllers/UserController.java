@@ -80,4 +80,10 @@ public class UserController {
         return new ResponseEntity<>(userService.findAllByRole(libelleRole), HttpStatus.OK);
     }
 
+    @GetMapping("/login")
+    @Operation(summary = "Connexion")
+    public User connexions(@RequestParam("email")  String email,
+                            @RequestParam("password")  String password) {
+        return userService.connexionUser(email, password);
+    }
 }
